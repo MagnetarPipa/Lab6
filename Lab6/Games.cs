@@ -66,7 +66,7 @@ namespace Lab6
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void EditGames(Game game,uint index)
         {
-            if (index >= 0 && index < _games.Length)
+            if (index >= 0 && index < _games.Length && (game is not null))
             {
                 _games[index] = game;
             }

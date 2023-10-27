@@ -4,7 +4,7 @@ namespace Lab6
     /// <summary>
     /// Класс BoardGame,содержащий свойства BoardGame и наследующий класс Game
     /// </summary>
-    public class BoardGame : Game
+    public class BoardGame : Game, IGame
     {
         private int _numberOfPlayers;
         private int _playingTimeInMinutes;
@@ -72,6 +72,39 @@ namespace Lab6
             NumberOfPlayers = numberOfPlayers;
             PlayingTimeInMinutes = playingTimeInMinutes;
             IsCooperative = isCooperative;
+        }
+
+        /// <summary>
+        /// Метод для изменения текущего состояния игры на "start"
+        /// </summary>
+        public override void StartGame()
+        {
+            if (CurrentState != GameStates.START)
+            {
+                CurrentState = GameStates.START;
+            }
+        }
+
+        /// <summary>
+        /// Метод для изменения текущего состояния игры на "play"
+        /// </summary>
+        public override void PlayGame()
+        {
+            if (CurrentState != GameStates.PLAY)
+            {
+                CurrentState = GameStates.PLAY;
+            }
+        }
+
+        /// <summary>
+        /// Метод для изменения текущего состояния игры на "end"
+        /// </summary>
+        public override void EndGame()
+        {
+            if (CurrentState != GameStates.END)
+            {
+                CurrentState = GameStates.END;
+            }
         }
 
         public override string ToString()

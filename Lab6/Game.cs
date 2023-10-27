@@ -134,39 +134,11 @@ namespace Lab6
             }
 
         }
+
+        public abstract void StartGame();
+        public abstract void PlayGame();
+        public abstract void EndGame();
         
-        /// <summary>
-        /// Метод для изменения текущего состояния игры на "start"
-        /// </summary>
-        public void StartGame()
-        {
-            if (CurrentState != GameStates.START)
-            {
-                CurrentState = GameStates.START;
-            }
-        }
-
-        /// <summary>
-        /// Метод для изменения текущего состояния игры на "play"
-        /// </summary>
-        public void PlayGame()
-        {
-            if (CurrentState != GameStates.PLAY)
-            {
-                CurrentState = GameStates.PLAY;
-            }
-        }
-
-        /// <summary>
-        /// Метод для изменения текущего состояния игры на "end"
-        /// </summary>
-        public void EndGame()
-        {
-            if (CurrentState != GameStates.END)
-            {
-                CurrentState = GameStates.END;
-            }
-        }
 
         public override string ToString()
         {
